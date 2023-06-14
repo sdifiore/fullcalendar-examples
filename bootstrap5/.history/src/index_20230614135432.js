@@ -9,11 +9,25 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-icons/font/bootstrap-icons.css'; // webpack uses file-loader to handle font files
 import './index.css'; // our app's CSS
 
-document.addEventListener('DOMContentLoaded', function() {
-  var variavel = "Olá, mundo!";
-  var resultadoElement = document.getElementById("resultado");
-  resultadoElement.textContent = variavel;
+const axios = require('axios');
+const url = "http://difiores-001-site3.etempurl.com/Agenda";
 
+axios.get(url)
+.then(response => {
+  const json = response.data;
+  console.log(json);
+
+  const jsonString = JSON.stringify(json);
+  console.log(jsonString);
+})
+.catch(error => {
+  console.error('Erro na solicitação HTTP:', error);
+});
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  let resultadoElement = document.getElementById("resultado");
+  resultadoElement.textContent = json;
   let calendarEl1 = document.getElementById('calendar1');
   let calendarEl2 = document.getElementById('calendar2');
   let calendarEl3 = document.getElementById('calendar3');

@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { Calendar } from '@fullcalendar/core';
 import interactionPlugin from '@fullcalendar/interaction';
 import dayGridPlugin from '@fullcalendar/daygrid';
@@ -10,14 +11,9 @@ import 'bootstrap-icons/font/bootstrap-icons.css'; // webpack uses file-loader t
 import './index.css'; // our app's CSS
 
 document.addEventListener('DOMContentLoaded', function() {
-  var variavel = "Olá, mundo!";
-  var resultadoElement = document.getElementById("resultado");
-  resultadoElement.textContent = variavel;
-
   let calendarEl1 = document.getElementById('calendar1');
   let calendarEl2 = document.getElementById('calendar2');
   let calendarEl3 = document.getElementById('calendar3');
-
 
   let calendar1 = new Calendar(calendarEl1, {
     plugins: [ interactionPlugin, dayGridPlugin, timeGridPlugin, listPlugin, bootstrap5Plugin ],
