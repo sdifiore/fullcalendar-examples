@@ -17,6 +17,9 @@ document.addEventListener('DOMContentLoaded', function() {
   let calendarEl2 = document.getElementById('calendar2');
   let calendarEl3 = document.getElementById('calendar3');
 
+  axios('http://difiores-001-site3.etempurl.com/Agenda')
+.then(resposta => carregaElementoNaPagina(resposta.data))
+
   let calendar1 = new Calendar(calendarEl1, {
     plugins: [ interactionPlugin, dayGridPlugin, timeGridPlugin, listPlugin, bootstrap5Plugin ],
     locale: 'pt-br',

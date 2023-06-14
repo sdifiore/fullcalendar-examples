@@ -16,7 +16,6 @@ document.addEventListener('DOMContentLoaded', function() {
   let calendarEl1 = document.getElementById('calendar1');
   let calendarEl2 = document.getElementById('calendar2');
   let calendarEl3 = document.getElementById('calendar3');
-
   let calendar1 = new Calendar(calendarEl1, {
     plugins: [ interactionPlugin, dayGridPlugin, timeGridPlugin, listPlugin, bootstrap5Plugin ],
     locale: 'pt-br',

@@ -9,13 +9,20 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-icons/font/bootstrap-icons.css'; // webpack uses file-loader to handle font files
 import './index.css'; // our app's CSS
 
-const table = document.createElement('table');
+// axios('http://difiores-001-site3.etempurl.com/Agenda')
+// .then(resposta => carregaElementoNaPagina(resposta.data))
+
+//  const carregaElementoNaPagina = (json) => {
+//   console.log(json)
+
+  const table = document.createElement('table');
 
 document.addEventListener('DOMContentLoaded', function() {
 
   let calendarEl1 = document.getElementById('calendar1');
   let calendarEl2 = document.getElementById('calendar2');
   let calendarEl3 = document.getElementById('calendar3');
+
 
   let calendar1 = new Calendar(calendarEl1, {
     plugins: [ interactionPlugin, dayGridPlugin, timeGridPlugin, listPlugin, bootstrap5Plugin ],
