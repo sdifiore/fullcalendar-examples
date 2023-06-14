@@ -10,6 +10,9 @@ import 'bootstrap-icons/font/bootstrap-icons.css'; // webpack uses file-loader t
 import './index.css'; // our app's CSS
 
 document.addEventListener('DOMContentLoaded', function() {
+  var variavel = "Olá, mundo!";
+  var resultadoElement = document.getElementById("resultado");
+  resultadoElement.textContent = variavel;
 
   let calendarEl1 = document.getElementById('calendar1');
   let calendarEl2 = document.getElementById('calendar2');
@@ -48,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
     ]
   });
 
-  let calendar2 = new Calendar(calendarEl2, {
+  var calendar2 = new Calendar(calendarEl2, {
     plugins: [ interactionPlugin, dayGridPlugin, timeGridPlugin, listPlugin, bootstrap5Plugin ],
     locale: 'pt-br',
     themeSystem: 'bootstrap5',
@@ -80,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function() {
     ]
   });
 
-  let calendar3 = new Calendar(calendarEl3, {
+  var calendar3 = new Calendar(calendarEl3, {
     plugins: [ interactionPlugin, dayGridPlugin, timeGridPlugin, listPlugin, bootstrap5Plugin ],
     locale: 'pt-br',
     themeSystem: 'bootstrap5',
@@ -118,7 +121,7 @@ document.addEventListener('DOMContentLoaded', function() {
    axios.get('http://difiores-001-site3.etempurl.com/Agenda')
    .then(function(response) {
     console.log(response)
-     let events = response.data;
+     var events = response.data;
 
      // Adicionar os eventos aos calendários
      calendar1.addEventSource(events);
